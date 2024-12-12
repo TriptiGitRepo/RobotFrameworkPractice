@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-12T21:11:26.415765" rpa="false" schemaversion="5">
+<suite id="s1" name="testDemo1" source="C:\Users\dell\PycharmProjects\RobotFramework\tests\testDemo1.robot">
+<test id="s1-t1" name="Validate Successful Login" line="7">
+<kw name="open the browser with Mortgage payment url">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:26.670556" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-12-12T21:11:26.670401" elapsed="1.535363"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:28.206069" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-12T21:11:28.205946" elapsed="0.342507"/>
+</kw>
+<status status="PASS" start="2024-12-12T21:11:26.669788" elapsed="1.878947"/>
+</kw>
+<kw name="Fill the login form">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:28.549879" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>rahulshettyacademy</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-12T21:11:28.549545" elapsed="0.227911"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:28.777847" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2024-12-12T21:11:28.811330" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:password</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-12T21:11:28.777631" elapsed="0.096545"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:28.874547" level="INFO">Clicking button 'signInBtn'.</msg>
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-12T21:11:28.874369" elapsed="0.095062"/>
+</kw>
+<status status="PASS" start="2024-12-12T21:11:28.549173" elapsed="0.420383"/>
+</kw>
+<kw name="wait until it checks and displays error message">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.alert-danger</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-12T21:11:28.970309" elapsed="2.108860"/>
+</kw>
+<status status="PASS" start="2024-12-12T21:11:28.970050" elapsed="2.109292"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-12T21:11:31.111297" level="INFO">${result} = Incorrect username/password.</msg>
+<var>${result}</var>
+<arg>css:.alert-danger</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-12T21:11:31.080336" elapsed="0.031052"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-12-12T21:11:31.111594" elapsed="0.000366"/>
+</kw>
+<status status="PASS" start="2024-12-12T21:11:31.079962" elapsed="0.032078"/>
+</kw>
+<status status="PASS" start="2024-12-12T21:11:26.668889" elapsed="4.443511"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" start="2024-12-12T21:11:26.417573" elapsed="4.695915"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo1">testDemo1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
