@@ -8,22 +8,29 @@ Resource    resource.robot
 
 *** Variables ***
 ${Error_message_login}    css:.alert-danger
+${Shop_page_load}    css:.nav-link
 #this way you can save variables at global level so that they can be used globally in a framework
 
 *** Test Cases ***
 Validate Successful Login
-        Fill the login form
-        wait until it checks and displays error message
+        Fill the login form    ${user_name}    ${invalid_password}
+        wait until element is located on the page    ${Error_message_login}
         verify error message is correct
+
+Validate Cards displayed in the shopping page
+    Fill The Login Form    ${user_name}    ${valid_password}
+    wait until element is located on the page    ${Shop_page_load}
 
 *** Keywords ***
 Fill the login form
-    Input Text    id:username    ${user_name}
-    Input Password    id:password    ${invalid_password}
+    [Arguments]    ${username}    ${password}
+    Input Text    id:username    ${username}
+    Input Password    id:password    ${password}
     Click Button    signInBtn
     
-wait until it checks and displays error message
-    Wait Until Element Is Visible    css:.alert-danger
+wait until element is located on the page
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
 
 verify error message is correct
     ${result}=    Get Text    ${Error_message_login}
