@@ -3,7 +3,7 @@ Documentation    To validate the login form
 Library    SeleniumLibrary
 Library    Collections
 Test Setup        open the browser with Mortgage payment url
-#Test Teardown    Close Browser Session
+Test Teardown    Close Browser Session
 Resource    resource.robot
 
 
@@ -13,19 +13,20 @@ ${Shop_page_load}    css:.nav-link
 #this way you can save variables at global level so that they can be used globally in a framework
 
 *** Test Cases ***
-#Validate Successful Login
-#        Fill the login form    ${user_name}    ${invalid_password}
-#        wait until element is located on the page    ${Error_message_login}
-#        verify error message is correct
+Validate Successful Login
+        Fill the login form    ${user_name}    ${invalid_password}
+        wait until element is located on the page    ${Error_message_login}
+        verify error message is correct
 
-#Validate Cards displayed in the shopping page
-#    Fill the login form    ${user_name}    ${valid_password}
-#    Wait until element is located on the page    ${Shop_page_load}
-#    Verify item titles on the shopping page
-#    Select and add item to cart    Blackberry
+Validate Cards displayed in the shopping page
+    Fill the login form    ${user_name}    ${valid_password}
+    Wait until element is located on the page    ${Shop_page_load}
+    Verify item titles on the shopping page
+    Select and add item to cart    Blackberry
 
 Select the form and navigate to child window
      Fill the login details and choose user types
+
 
 
 *** Keywords ***
@@ -75,5 +76,5 @@ Fill the login details and choose user types
     Wait Until Element Is Not Visible    css:.modal-body
     Select From List By Value    css:select.form-control    teach
     Select Checkbox    id:terms
-    Checkbox Should Be Selected    id:termscd
+    Checkbox Should Be Selected    id:terms
     
