@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 Library    Collections
 Library    String
 Test Setup    open the browser with Mortgage payment url
-#Test Teardown    Close Browser Session
+Test Teardown    Close Browser Session
 Resource    resource.robot
 
 
@@ -18,7 +18,7 @@ Validate child window functionality
     Click link to open child window
     Verify that user has switched to child window
     Get email on the child window
-#    Switch to parent window and enter the email
+    Switch to parent window and enter the email
 
 
 
@@ -40,3 +40,8 @@ Get email on the child window
     ${email}=    Get From List    ${SplitString2}    0
     Set Global Variable    ${email}
     Log    ${email}
+
+Switch to parent window and enter the email
+    Switch Window    MAIN
+    Title Should Be    LoginPage Practise | Rahul Shetty Academy
+    Input Text    id:username    ${email}
