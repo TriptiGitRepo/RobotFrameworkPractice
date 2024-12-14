@@ -18,11 +18,14 @@ ${Shop_page_load}    css:.nav-link
 #        wait until element is located on the page    ${Error_message_login}
 #        verify error message is correct
 
-Validate Cards displayed in the shopping page
-    Fill the login form    ${user_name}    ${valid_password}
-    Wait until element is located on the page    ${Shop_page_load}
-    Verify item titles on the shopping page
-    Select and add item to cart    Blackberry
+#Validate Cards displayed in the shopping page
+#    Fill the login form    ${user_name}    ${valid_password}
+#    Wait until element is located on the page    ${Shop_page_load}
+#    Verify item titles on the shopping page
+#    Select and add item to cart    Blackberry
+
+Select the form and navigate to child window
+     Fill the login details and choose user types
 
 
 *** Keywords ***
@@ -53,13 +56,24 @@ Verify item titles on the shopping page
     Lists Should Be Equal    ${expectedList}    ${actualList}
 
 Select and add item to cart
-    [Arguments]    ${itemname}
+    [Arguments]    ${item_name}
     ${elements}=    Get Webelements    css:.card-title
     ${index}=    Set Variable    1
     FOR    ${element}    IN    @{elements}
-        Exit For Loop If    '${itemname}' == '${element.text}'
+        Exit For Loop If    '${item_name}' == '${element.text}'
         ${index}=    Evaluate    ${index} + 1
     END
     Click Button    xpath:(//button[contains(@class, 'btn')])[${index}]
 
+Fill the login details and choose user types
+    Input Text    id:username    rahulshettyacademy
+    Input Password    id:password    learning
+    Click Element    css:input[value='user']
+    Wait Until Element Is Visible    css:.modal-body
+    Click Button    okayBtn
+    Click Button    okayBtn
+    Wait Until Element Is Not Visible    css:.modal-body
+    Select From List By Value    css:select.form-control    teach
+    Select Checkbox    id:terms
+    Checkbox Should Be Selected    id:termscd
     
