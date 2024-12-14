@@ -17,7 +17,7 @@ ${Shop_page_load}    css:.nav-link
 Validate child window functionality
     Click link to open child window
     Verify that user has switched to child window
-#    Get email on the child window
+    Get email on the child window
 #    Switch to parent window and enter the email
 
 
@@ -30,3 +30,13 @@ Click link to open child window
 Verify that user has switched to child window
     Switch Window    NEW
     Element Text Should Be    css:h1    DOCUMENTS REQUEST
+
+Get email on the child window
+    ${WholeText}=    Get Text    css:.red
+    @{SplitString1}=    Split String    ${WholeText}    at
+    ${SplitText1}=    Get From List    ${SplitString1}    1
+    Log    ${SplitText1}
+    @{SplitString2}=    Split String    ${SplitText1}
+    ${email}=    Get From List    ${SplitString2}    0
+    Set Global Variable    ${email}
+    Log    ${email}
