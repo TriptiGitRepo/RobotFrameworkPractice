@@ -16,7 +16,7 @@ ${Shop_page_load}    css:.nav-link
 *** Test Cases ***
 Validate child window functionality
     Click link to open child window
-#    Verify that user has switched to child window
+    Verify that user has switched to child window
 #    Get email on the child window
 #    Switch to parent window and enter the email
 
@@ -26,4 +26,7 @@ Validate child window functionality
 Click link to open child window
     Click Element    css:.blinkingText
     Sleep    5
-    
+
+Verify that user has switched to child window
+    Switch Window    NEW
+    Element Text Should Be    css:h1    DOCUMENTS REQUEST
