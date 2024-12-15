@@ -11,7 +11,7 @@ ${Error_message_login}    css:.alert-danger
 *** Test Cases ***    username    password
 Invalid username        dsahed    learning
 Invalid password        rahulshetty    psjfrhf
-special characters        @#$    learning        
+special characters        @#$    learning
 
 
 *** Keywords ***
@@ -40,4 +40,5 @@ verify error message is correct
     Should Be Equal As Strings    ${result}    Incorrect username/password.
 #    Another way
 #    Element Text Should Be    ${Error_message_login}    Incorrect username/password.
-    
+    Log    end of execution
+    Capture Page Screenshot    TestScreenshot-{index}.png
