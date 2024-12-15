@@ -1,24 +1,23 @@
 *** Settings ***
 Documentation    To validate the login form
 Library    SeleniumLibrary
-#Test Teardown    Close Browser
-#Test Template    Validate Successful Login
+Library    DataDriver    file=resources/data.csv    encoding=utf_8    dialect=unix
+Test Teardown    Close Browser
+Test Template    Validate Successful Login
 
 *** Variables ***
 ${Error_message_login}    css:.alert-danger
 #this way you can save variables at global level so that they can be used globally in a framework
 
-*** Test Cases ***    username    password
-Invalid username        dsahed    learning
-Invalid password        rahulshetty    psjfrhf
-special characters        @#$    learning
+*** Test Cases ***
+Login with userid ${user_name} and password ${password}    xyz    123456
 
 
 *** Keywords ***
 Validate Successful Login
-    [Arguments]    ${username}    ${password}
+    [Arguments]    ${user_name}    ${password}
     open the browser with Mortgage payment url
-    Fill the login form    ${username}    ${password}
+    Fill the login form    ${user_name}    ${password}
     wait until it checks and displays error message
     verify error message is correct
         
@@ -27,8 +26,8 @@ open the browser with Mortgage payment url
     Go To    https://rahulshettyacademy.com/loginpagePractise/
 
 Fill the login form
-    [Arguments]    ${username}    ${password}
-    Input Text    id:username    ${username}
+    [Arguments]    ${user_name}    ${password}
+    Input Text    id:username    ${user_name}
     Input Password    id:password    ${password}
     Click Button    signInBtn
     

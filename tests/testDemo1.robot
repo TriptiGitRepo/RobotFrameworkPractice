@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    To validate the login form
 Library    SeleniumLibrary
-#Test Teardown    Close Browser
+Test Teardown    Close Browser
 
 *** Variables ***
 ${Error_message_login}    css:.alert-danger

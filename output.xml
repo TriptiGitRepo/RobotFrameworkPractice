@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-16T00:07:32.840627" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="C:\Users\dell\PycharmProjects\RobotFramework">
+<suite id="s1-s1" name="Tests" source="C:\Users\dell\PycharmProjects\RobotFramework\tests">
+<suite id="s1-s1-s1" name="testDemo5" source="C:\Users\dell\PycharmProjects\RobotFramework\tests\testDemo5.robot">
+<test id="s1-s1-s1-t1" name="Login with userid ${user_name} and password ${password}" line="13">
+<status status="FAIL" start="2024-12-16T00:07:33.081616" elapsed="0.000998">Test cannot be empty.</status>
+</test>
+<doc>To validate the login form</doc>
+<status status="FAIL" start="2024-12-16T00:07:32.861001" elapsed="0.222792"/>
+</suite>
+<status status="FAIL" start="2024-12-16T00:07:32.860055" elapsed="0.225214"/>
+</suite>
+<status status="FAIL" start="2024-12-16T00:07:32.841980" elapsed="0.244190"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFramework">RobotFramework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFramework.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="testDemo5">RobotFramework.Tests.testDemo5</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-16T00:07:33.076552" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\dell\PycharmProjects\RobotFramework\tests\testDemo5.robot", line 0</msg>
+<msg time="2024-12-16T00:07:33.077424" level="ERROR">In source file:
+  File "C:\Users\dell\PycharmProjects\RobotFramework\tests\resources\data.csv", line 0</msg>
+<msg time="2024-12-16T00:07:33.079914" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ValueError: Unassigned requiered argument detected: ${username}.</msg>
+</errors>
+</robot>
