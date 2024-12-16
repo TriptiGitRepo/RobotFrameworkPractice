@@ -1,11 +1,17 @@
 from robot.api.deco import library, keyword
+from robot.libraries.BuiltIn import BuiltIn
 
 
 @library
 class Shop:
 
-    # def __init__(self):
-
+    def __init__(self):
+        self.sellib = BuiltIn().get_library_instance("SeleniumLibrary")
     @keyword
     def hello_world(self):
         print("Hello World")
+
+    @keyword
+    def add_item_to_cart_and_checkout(self, productsLists):
+        self.sellib.get_webelements("css:.card-title")
+

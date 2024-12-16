@@ -11,6 +11,7 @@ Resource    resource.robot
 *** Variables ***
 ${Error_message_login}    css:.alert-danger
 ${Shop_page_load}    css:.nav-link
+@{listofProducts}    Blackberry    Nokia Edge
 #this way you can save variables at global level so that they can be used globally in a framework
 
 *** Test Cases ***
@@ -24,7 +25,8 @@ Validate Cards displayed in the shopping page
     Wait until element is located on the page    ${Shop_page_load}
     Verify item titles on the shopping page
     Hello World
-    Select and add item to cart    Blackberry
+#    Select and add item to cart    Blackberry
+    Add Item To Cart And Checkout    @{listofProducts}
 
 #Select the form and navigate to child window
 #     Fill the login details and choose user types
