@@ -26,7 +26,7 @@ Validate Cards displayed in the shopping page
     Verify item titles on the shopping page
     Hello World
 #    Select and add item to cart    Blackberry
-    Add Item To Cart And Checkout    @{listofProducts}
+    Add Item To Cart And Checkout    ${listofProducts}
 
 #Select the form and navigate to child window
 #     Fill the login details and choose user types
