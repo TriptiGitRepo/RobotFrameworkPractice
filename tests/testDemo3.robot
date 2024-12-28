@@ -5,7 +5,7 @@ Library    Collections
 Library    String
 Test Setup    open the browser with Mortgage payment url
 Test Teardown    Close Browser Session
-Resource    resource.robot
+Resource    ../PageObjectDesign/Generic.robot
 
 
 *** Variables ***

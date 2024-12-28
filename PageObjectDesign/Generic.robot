@@ -11,6 +11,7 @@ ${user_name}    rahulshettyacademy
 ${invalid_password}    12345678
 ${valid_password}    learning
 ${url}    https://rahulshettyacademy.com/loginpagePractise/
+${Error_message_login}    css:.alert-danger
 
 *** Keywords ***
 open the browser with Mortgage payment url
@@ -19,3 +20,7 @@ open the browser with Mortgage payment url
     
 Close Browser Session
     Close Browser
+
+Wait until element passed is located on page
+    [Arguments]    ${page_locator}
+    Wait Until Element Is Visible    ${page_locator}
