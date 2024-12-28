@@ -20,3 +20,4 @@ class Shop:
             if productsTitle.text in productslists:
                 self.sellib.click_button("xpath:(//*[@class='card-footer'])["+str(i)+"]/button")
             i=i+1
+        self.sellib.click_link("css:li.active a")
