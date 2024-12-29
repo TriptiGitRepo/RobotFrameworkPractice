@@ -13,6 +13,7 @@ Fill the login form
     Input Text    id:username    ${username}
     Input Password    id:password    ${password}
     Click Button    signInBtn
+    Maximize Browser Window
 
 Wait until element is located on the page
     Wait until element passed is located on page    ${Error_message_login}
